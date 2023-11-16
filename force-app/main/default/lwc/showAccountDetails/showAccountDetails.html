@@ -1,0 +1,26 @@
+<template>
+    <lightning-card title="Account Details">
+        <table>
+            <tbody>
+                <tr>
+                    <td colspan="1">
+                        <div class="slds-var-m-right__around">
+                            <template if:true={account}>
+                                <p><b>Name:</b> {account.Name}</p>
+                                <p><b>Industry:</b> {account.Industry}</p>
+                                <p><b>Annual Revenue:</b> {account.AnnualRevenue}</p>
+                                <!-- Add more fields as needed -->
+                            </template>
+                            <template if:false={account}>
+                                <p><b>Name:</b> </p>
+                                <p><b>Industry:</b></p>
+                                <p><b>Annual Revenue:</b></p>
+                                <!-- Add more fields as needed -->
+                            </template>
+                        </div>
+                    </td>
+                </tr>  
+            </tbody> 
+        </table>
+    </lightning-card>  
+</template>

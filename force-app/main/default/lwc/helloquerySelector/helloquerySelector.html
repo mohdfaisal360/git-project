@@ -1,0 +1,11 @@
+<template>
+    <lightning-card>
+        <div class="slds-var-m-around_medium">
+            <h1>I am heading</h1>
+            <template for:each={userList} for:item="user">
+                <div class="name" key={user}>{user}</div>
+            </template>
+            <button onclick={fetchDetailsHandler}>fetch details</button>
+        </div>
+    </lightning-card>  
+</template>

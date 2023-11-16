@@ -1,0 +1,25 @@
+<template>
+    <div role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" class="slds-modal slds-fade-in-open">
+        <div class="slds-modal__container">
+            <header class="slds-modal__header">
+                <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">Account Details</h2>
+            </header>
+            <div class="slds-modal__content slds-p-around_medium">
+                <template if:true={selectedAccount}>
+                    <lightning-record-view-form record-id={selectedAccount.Id} object-api-name="Account">
+                        <div class="slds-grid slds-gutters">
+                            <div class="slds-col">
+                                <lightning-output-field field-name="Name"></lightning-output-field>
+                            </div>
+                            <!-- Add more lightning-output-field elements for additional fields -->
+                        </div>
+                    </lightning-record-view-form>
+                </template>
+            </div>
+            <footer class="slds-modal__footer">
+                <lightning-button label="Close" onclick={closeModal}></lightning-button>
+            </footer>
+        </div>
+    </div>
+    <div class="slds-backdrop slds-backdrop_open"></div>
+</template>

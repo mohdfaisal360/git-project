@@ -1,0 +1,13 @@
+p{
+    color:greenyellow;
+    font-size: 10px;
+    border: 1px solid red;
+}
+.user{
+    color: blueviolet;
+    font-size: 15px;
+}
+.user:hover{
+    font-size: 45px;
+    color: chartreuse;
+}

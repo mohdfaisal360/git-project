@@ -1,0 +1,21 @@
+.account-table {
+    display: flex;
+}
+table {
+    border-collapse: collapse;
+    width: 30%;
+}
+th, td {
+    padding: 8px;
+    border-bottom: 1px solid #ddd;
+}
+th {
+    background-color: #f2f2f2;
+}
+.selected {
+    background-color: #f0f8ff;
+}
+.account-details {
+    padding: 20px;
+    width: 70%;
+}

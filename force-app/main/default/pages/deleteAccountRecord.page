@@ -1,0 +1,6 @@
+<apex:page standardController="Account" recordSetVar="accs" extensions="deleteMultipleRecordcCass" action="{!checkForDelete}">
+<apex:includeScript value="/soap/ajax/18.0/connection.js"/>
+    <script>
+       var GetIDs= '{!accIds}';
+    </script>
+</apex:page>

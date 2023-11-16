@@ -1,0 +1,9 @@
+<template>
+    <template for:each={dataArray} for:item="item" for:index="index">
+        <div key={item.id} class="row-container">
+            <lightning-input value={item.value} data-index={index} onchange={handleInputChange}></lightning-input>
+            <lightning-button-icon icon-name="utility:delete" size="small" title="Delete Row" data-index={index} onclick={removeRow}></lightning-button-icon>
+        </div>
+    </template>
+    <lightning-button label="Add Row" onclick={addRow} disabled={dataArray.length >= 10}></lightning-button>
+</template>

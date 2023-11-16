@@ -1,0 +1,43 @@
+<template>
+    <lightning-card title="Quiz for LWC" >
+        
+        <form>
+            <div class="slds-m-around_medium"> 
+                
+                <template for:each={myQuestions} for:item="quiz">
+                    <div key={quiz} class="slds-m-around_medium">
+                        <div>
+                            <strong>{quiz.id}</strong> {quiz.Question}
+                        </div>
+                        <div class="slds-grid slds-gutters slds-m-around-large">
+                            <div class="slds-col  slds-p-bottom_medium">
+                                <input type="radio" name={quiz.id} value="a" onchange={buttonHandler} />
+                                {quiz.answers.a}
+                            </div>
+                            <div class="slds-col  slds-p-bottom_medium">
+                                <input type="radio" name={quiz.id} value="b" onchange={buttonHandler} />
+                                {quiz.answers.b}
+                            </div>
+                            <div class="slds-col  slds-p-bottom_medium">
+                                <input type="radio" name={quiz.id} value="c" onchange={buttonHandler} />
+                                {quiz.answers.c}
+                            </div>
+                            <div class="slds-col  slds-p-bottom_medium">
+                                <input type="radio" name={quiz.id} value="d" onchange={buttonHandler} />
+                                {quiz.answers.d}
+                            </div>
+                        </div>
+                    </div>
+                </template>
+
+
+               <lightning-button variant="brand" type="submit" label="Submit Quiz" onclick={handleSubmit} disabled={allAnswersNotSelected} class="slds-p-around_x-small"> </lightning-button> 
+               <lightning-button variant="neutral" type="reset" label="Reset Answers" onclick={handleReset} class="slds-p-around_x-small"> </lightning-button>   
+            </div>
+        </form>
+
+        <template if:true={allAnswersSelected}>
+            You have scored {correctAnswersCount} out of {myQuestions.length} in the Quiz
+        </template>
+    </lightning-card>    
+</template>

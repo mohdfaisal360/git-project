@@ -1,0 +1,86 @@
+<template>
+    <lightning-card  title="Two way data binding">
+        <div class="slds-m-around_medium">
+            <lightning-input type="text" label="Enter Course Name" onkeyup={changeHandler}></lightning-input>
+        <div>{fullName} is the course of {title}</div> 
+        </div>  
+    </lightning-card>
+
+    <lightning-card  title="@track property">
+        <div class="slds-m-around_medium">
+            <lightning-input type="text" label="Enter City Name" onkeyup={trackCity}></lightning-input>
+            <lightning-input type="text" label="Enter Country Name" onkeyup={trackCountry}></lightning-input>
+        <div>{address.City} is my City</div> 
+        <div>{address.Country} is my Country</div>
+        </div>  
+    </lightning-card>
+
+<lightning-card  title="Getter Property">
+    <div class="slds-m-around_medium">
+    <div>First user is {firstUser}</div>
+    <div>The result is {multiply}</div>
+    </div>  
+</lightning-card>
+
+<lightning-card  title="Conditional Rendering">
+    <div class="slds-m-around_medium">
+        <lightning-button variant="brand" label="show data" title="show data" onclick={handleClick} class="slds-var-m-left_x-margin"></lightning-button>
+        <template if:true={isVisible}>
+            <div>Welcome to directive</div>
+        </template>
+        <template if:false={isVisible}>
+            <div>you can not see the data, please click the button</div>
+        </template>
+
+        <lightning-input type="text" label="Type Correctly" onkeyup={changeHandler}>
+        </lightning-input>
+        <template if:true={helloMethod}>
+            <div>Hurray!! you type Correctly</div>
+        </template>
+    </div>  
+</lightning-card>
+<lightning-card  title="Template Looping for :Each">
+    <div class="slds-m-around_medium">
+        <template for:each={carList} for:item="car">
+            <ul key={car} class="slds-has-dividers_around slds-has-block-links">
+                <li class="slds-item">{car}</li>
+            </ul>
+        </template>
+    </div>  
+</lightning-card>
+<lightning-card  title="Template Looping for :Each">
+    <div class="slds-m-around_medium">
+        <template for:each={ceoList} for:item="list">
+            <ul key={list.Id} class="slds-has-dividers_around slds-has-block-links">
+                <li class="slds-item"><strong>{list.company}</strong><b><i>{list.ceoName}</i></b></li>
+            </ul>
+        </template>
+    </div>  
+</lightning-card>
+
+<!--for iterator:Looping-->
+<lightning-card  title="Template Looping Iterator loop">
+    <div class="slds-m-around_medium">
+        <template iterator:ceo={ceoList}>
+            <div key={ceo.value.id}>
+                <ul class="slds-has-dividers_around-space">
+                    <template if:true={ceo.first}>
+                        <div class="slds-box slds-theme_shade">
+                            List of some top company's and there CEO's
+                        </div>
+                    </template>
+                    <li class="slds-item">
+                        <strong>{ceo.value.company}</strong>
+                        <strong><i>{ceo.value.ceoName}</i></strong>
+                    </li>
+                    <template if:true={ceo.last}>
+                        <div class="slds-box slds-theme_shade">
+                            Thanks for reading the List
+                        </div>
+                    </template>
+                </ul>
+            </div>
+        </template>
+    </div>  
+</lightning-card>
+</template>

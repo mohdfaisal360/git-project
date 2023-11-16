@@ -1,0 +1,29 @@
+<template>
+    <lightning-layout-item size="4">
+        <div class="slds-form-element">
+            <label class="slds-form-element__label" for="text-input-id-46">Menu</label>
+            <div class="slds-form-element__control">
+            <input type="text" id="text-input-id-46" placeholder={placeHolderValue}  class="slds-input" />
+            </div>
+            </div>
+  </lightning-layout-item>
+    
+    <lightning-layout class="slds-p-horizontal_medium" multiple-rows>
+      
+        <template for:each={inputFields} for:item="field" for:index="index">
+            <lightning-layout-item class="input_icoc_flex" size="12" small-device-size="4" medium-device-size="4" large-device-size="4" key={field.key}>
+                <lightning-input value={field.value} data-index={index} style="width:100%;" placeholder={placeHolderValue} class="label_input" onchange={handleInputChange}></lightning-input>
+                <lightning-button-icon icon-name="utility:close" size="small" style="padding-left: 2px; padding-bottom: 12px;" data-index={index} onclick={handleClickCloseMenu}></lightning-button-icon>
+            </lightning-layout-item>
+            <lightning-layout-item class="input_icoc_flex" size="12" small-device-size="4" medium-device-size="4" large-device-size="4" key={field.key}>
+              
+            </lightning-layout-item>
+            <lightning-layout-item class="input_icoc_flex" size="12" small-device-size="4" medium-device-size="4" large-device-size="4" key={field.key}>
+              
+            </lightning-layout-item>
+        </template>
+    </lightning-layout>
+    
+    <lightning-button-icon icon-name="utility:add" size="small" style="padding-left: 2px; padding-bottom:12px;" onclick={handleClickAdd} disabled={quickReplyAddDisable}>
+    </lightning-button-icon>
+</template>

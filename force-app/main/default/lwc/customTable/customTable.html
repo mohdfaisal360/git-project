@@ -1,0 +1,34 @@
+<template >
+    <lightning-card title="Custom Account Table">
+        <div class="slds-grid slds-wrap">
+            <div class="slds-col">
+                <table class="slds-table slds-table_cell-buffer slds-table_bordered">
+                    <thead>
+                        <tr class="slds-text-title_caps">
+                            <th scope="col">Account Name</th>
+                            
+                        </tr>
+                        
+                    </thead>
+                    <tbody>
+                        <template for:each={accountData} for:item="account">
+                            <tr key={account.Id}  >
+                                <td>  
+                                    <a href="javascript:void(0);" onclick={toggleAccountDetails} data-id={account.Id}>
+                                        {account.Name}
+                                    </a>
+                                </td>
+                            </tr>
+                            
+                        </template>
+                    </tbody>
+                </table>
+            </div>
+            <div class="slds-col">
+                <template if:true={selectedAccountId}>
+                    <c-show-account-details account-id={selectedAccountId}></c-show-account-details>
+                </template>   
+            </div>
+        </div> 
+    </lightning-card>
+</template>

@@ -1,0 +1,20 @@
+<template>
+    <lightning-card>
+        <!-- <template if:true={isLoaded}>
+            <lightning-spinner 
+                alternative-text="Loading..." 
+                variant="brand"
+            ></lightning-spinner>
+        </template> -->
+           <div class="slds-var-p-around_medium">
+            Name is {name}
+           <br/><br/>
+            Description is {description}
+           <br/><br/><br/>
+        <lightning-button
+            label="Update Account"
+            onclick={updateAccountRecord}
+        ></lightning-button>
+          </div>
+    </lightning-card>
+</template>
